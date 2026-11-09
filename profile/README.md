@@ -35,7 +35,7 @@ One hosted MCP server. Nothing to install or run.
 | **Any MCP client** | Add `https://mcp.blockworks.com/mcp`, authorize with your API key, start asking. Works with Claude, Claude Code, Cursor, and any agent framework that speaks remote MCP. |
 | **ChatGPT** | Install the [Blockworks plugin](https://docs.blockworks.com/mcp/plugins/chatgpt) from the ChatGPT plugin directory and authorize it once. |
 
-Five tools cover the whole surface: document search over research and news, plus catalog-and-read pairs for tabular datasets and metric timeseries.
+The tools cover document search over research and news, catalog-and-read access to tabular datasets and metric timeseries, monitoring developments and events, and the user's watchlists. All read-only.
 
 ## The datasets
 
