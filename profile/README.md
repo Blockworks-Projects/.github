@@ -11,7 +11,7 @@
 
 <p align="center">
   Market data, onchain metrics, and institutional research covering tens of thousands of assets.<br>
-  Delivered wherever your AI already works: MCP, plugins, skills, and an API underneath it all.
+  Delivered wherever your AI already works, with an API underneath.
 </p>
 
 <p align="center">
@@ -28,49 +28,41 @@
 
 ## Plug Blockworks into your agent
 
-One dataset, one hosted MCP server, packaged for every client that matters. Nothing to install or run.
+One hosted MCP server. Nothing to install or run.
 
 | Where | How |
 | --- | --- |
-| **Any MCP client** | Add `https://mcp.blockworks.com/mcp`, authorize with your API key, start asking. Works with Claude, Claude Code, Cursor, ChatGPT, and any agent framework that speaks remote MCP. |
-| **Claude** | [Blockworks plugin for Claude](https://github.com/Blockworks-Projects/claude-plugin): the MCP connection plus a research skill, a `/blockworks:research` command, and a `crypto-analyst` agent. |
-| **ChatGPT** | [Blockworks plugin](https://docs.blockworks.com/mcp/plugins/chatgpt) in the ChatGPT plugin directory. Install, authorize once, done. |
-| **Grok and Cursor** | [Blockworks plugin for Grok](https://github.com/Blockworks-Projects/grok-plugin): the same skill, command, and agent for Grok Build, Grok Bot, and Cursor. |
-| **Autonomous agents** | Pay-per-call access over x402, so an agent with a wallet can pull Blockworks data without an account. |
+| **Any MCP client** | Add `https://mcp.blockworks.com/mcp`, authorize with your API key, start asking. Works with Claude, Claude Code, Cursor, and any agent framework that speaks remote MCP. |
+| **ChatGPT** | Install the [Blockworks plugin](https://docs.blockworks.com/mcp/plugins/chatgpt) from the ChatGPT plugin directory and authorize it once. |
 
-Five tools cover the whole surface: document search over research and news, plus catalog-and-read pairs for tabular datasets and metric timeseries. The agent discovers what exists, then reads exactly what it needs.
+Five tools cover the whole surface: document search over research and news, plus catalog-and-read pairs for tabular datasets and metric timeseries.
 
-## The data underneath
+## The datasets
 
-Delivery is the product. The data is the moat.
+- **Market data**: assets, markets, exchanges, derivatives
+- **Projects and protocols**: revenue, lending, spot and perp DEXes, vaults, launchpads
+- **Fundraising**: rounds, investors, funds, M&A
+- **Institutional**: ETFs, digital asset treasuries
+- **Real world assets**: stablecoins, tokenized equities and commodities
+- **News and research**: Blockworks reports, diligence, and aggregated news
 
-- **Markets**: prices, volumes, and market caps across tens of thousands of assets and hundreds of exchanges.
-- **Onchain**: TVL, fees, revenue, active addresses, and transaction activity for major networks and protocols.
-- **Capital**: funding rounds, M&A, investors, fund data, and token unlock schedules.
-- **Research**: Blockworks reports, diligence, quarterly reviews, and aggregated news, searchable with citations.
+The full catalog, with every model, column, and metric, is in the [API reference](https://docs.blockworks.com/api-reference/data-api/market-data).
 
-Every surface above reads from the same warehouse-modeled datasets, so an answer in ChatGPT matches the row in your API response.
-
-## Building a product on it
-
-For teams that need Blockworks data inside their own systems rather than inside an assistant:
+## Building on the API
 
 | Surface | What it is for |
 | --- | --- |
-| **Data API** | REST access to every dataset and metric series. The foundation under the MCP server. |
-| **Monitoring API** | Event streams, webhooks, and Telegram alerts for the things your product reacts to. |
-| **Snowflake Datashare** | The full dataset shared live into your warehouse. No ETL, nothing to sync. |
+| **Data API** | REST access to every dataset and metric series. The same data the MCP server reads. |
+| **Monitoring API** | Events, webhooks, and Telegram alerts for the things your product reacts to. |
 
 ```bash
-curl https://api.blockworks.com/v1/metrics/active-address-total \
+curl 'https://api.blockworks.com/query/tabular/assets?pageSize=5' \
   -H "X-Blockworks-API-Key: $BLOCKWORKS_API_KEY"
 ```
 
-Spreadsheet plugins for Excel and Google Sheets are available too, for the analysts who prefer a formula to a prompt.
-
 ## Open source
 
-The plugins, skills, and tooling that connect agents to Blockworks live here. Issues and pull requests are welcome.
+Tooling that connects agents to Blockworks lives here. Issues and pull requests are welcome.
 
 <br>
 
