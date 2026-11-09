@@ -7,17 +7,20 @@
   </a>
 </p>
 
-<h3 align="center">Crypto intelligence, built for agents.</h3>
+<h3 align="center">Institutional-grade crypto data. Built to be queried by agents.</h3>
 
 <p align="center">
-  Market data, onchain metrics, and institutional research covering tens of thousands of assets.<br>
-  Delivered wherever your AI already works, with an API underneath.
+  Market data, onchain metrics, fundraising, and research across tens of thousands of assets, maintained by the Blockworks research team and delivered wherever your product or your AI already works.
 </p>
 
 <p align="center">
-  <a href="https://docs.blockworks.com/mcp/quickstart">MCP quickstart</a>
-  &nbsp;·&nbsp;
+  Messari is now part of Blockworks. Messari data continues here, unified in the Blockworks API and MCP. <a href="https://blockworks.com/insights/blockworks-acquires-messari">Announcement</a>
+</p>
+
+<p align="center">
   <a href="https://docs.blockworks.com">Docs</a>
+  &nbsp;·&nbsp;
+  <a href="https://docs.blockworks.com/mcp/quickstart">MCP quickstart</a>
   &nbsp;·&nbsp;
   <a href="https://app.blockworks.com/account/api">Get an API key</a>
   &nbsp;·&nbsp;
@@ -26,18 +29,9 @@
 
 <br>
 
-## Plug Blockworks into your agent
+## The data
 
-One hosted MCP server. Nothing to install or run.
-
-| Where | How |
-| --- | --- |
-| **Any MCP client** | Add `https://mcp.blockworks.com/mcp`, authorize with your API key or Login Credentials, start asking. Works with Claude, Claude Code, Cursor, and any agent framework that speaks remote MCP. |
-| **ChatGPT** | Install the [Blockworks plugin](https://docs.blockworks.com/mcp/plugins/chatgpt) from the ChatGPT plugin directory and authorize it once. |
-
-The tools cover document search over research and news, catalog-and-read access to tabular datasets and metric timeseries, monitoring developments and events, and the user's watchlists. The data tools are read-only.
-
-## The datasets
+More than 70 datasets and 170 endpoints, tabular and timeseries, with the same curated metrics Blockworks analysts use in production.
 
 - **Market data**: assets, markets, exchanges, derivatives
 - **Projects and protocols**: revenue, lending, spot and perp DEXes, vaults, launchpads
@@ -48,7 +42,16 @@ The tools cover document search over research and news, catalog-and-read access 
 
 The full catalog, with every model, column, and metric, is in the [API reference](https://docs.blockworks.com/api-reference/data-api/market-data).
 
-## Building on the API
+## In your agent
+
+One hosted MCP server over the whole catalog. Nothing to install or run.
+
+| Where | How |
+| --- | --- |
+| **Any MCP client** | Add `https://mcp.blockworks.com/mcp`, authorize with your API key or Blockworks login, start asking. Works with Claude, Claude Code, Cursor, and any agent framework that speaks remote MCP. |
+| **ChatGPT** | Install the [Blockworks plugin](https://docs.blockworks.com/mcp/plugins/chatgpt) from the ChatGPT plugin directory and authorize it once. |
+
+## In your product
 
 | Surface | What it is for |
 | --- | --- |
@@ -59,6 +62,16 @@ The full catalog, with every model, column, and metric, is in the [API reference
 curl 'https://api.blockworks.com/query/tabular/assets?pageSize=5' \
   -H "X-Blockworks-API-Key: $BLOCKWORKS_API_KEY"
 ```
+
+## For AI agents and crawlers
+
+Machine-readable entry points, kept current with the docs:
+
+| File | Use it for |
+| --- | --- |
+| [`llms.txt`](https://docs.blockworks.com/llms.txt) | Index of every docs page with a one-line summary. Start here. |
+| [`llms-full.txt`](https://docs.blockworks.com/llms-full.txt) | The full documentation in one file, for agents that want everything in context. |
+| [MCP tools reference](https://docs.blockworks.com/mcp/tools/overview) | Every tool the hosted MCP server exposes, with inputs and outputs. |
 
 <br>
 
