@@ -60,10 +60,6 @@ curl 'https://api.blockworks.com/query/tabular/assets?pageSize=5' \
   -H "X-Blockworks-API-Key: $BLOCKWORKS_API_KEY"
 ```
 
-## Open source
-
-Tooling that connects agents to Blockworks lives here. Issues and pull requests are welcome.
-
 <br>
 
 <p align="center">
